@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_gravity="center"
+    >
+
+    <Button
+        android:id="@+id/bt_credit_card"
+        android:layout_width="match_parent"
+        android:textAllCaps="false"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:onClick="buttonCreditCard"
+        android:text="Credit card"
+        android:textColor="#EEEEEE"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/bt_cash"
+        android:layout_width="match_parent"
+        android:textAllCaps="false"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:onClick="buttonCash"
+        android:text="Cash"
+        android:textColor="#EEEEEE"
+        android:layout_margin="10dp"
+        android:textSize="20sp" />
+
+</LinearLayout>

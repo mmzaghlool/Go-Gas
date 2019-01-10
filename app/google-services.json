@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "562094331547",
+    "firebase_url": "https://test-9424c.firebaseio.com",
+    "project_id": "test-9424c",
+    "storage_bucket": "test-9424c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562094331547:android:c7f113321b134258",
+        "android_client_info": {
+          "package_name": "com.gas.go.mostafa.gogas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562094331547-d66c83li8rpfi5rn7t03d30n8i9l0ggv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7a4kn0pbpRH6j8clxkHhmIqKMCFPYq6E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

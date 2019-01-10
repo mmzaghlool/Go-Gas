@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context=".LoginActivity">
+
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:src="@drawable/logo"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/LogIn"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        />
+    <!-- <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/mail"
+         android:textColor="@color/orange"
+         android:textSize="30sp"
+         android:textStyle="bold"
+         android:layout_margin="10dp"
+         /> -->
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/mail"
+        android:textColorHint="@color/colorAccent"
+        android:inputType="none|textEmailAddress"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        />
+
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/Pass"
+        android:textColor="@color/orange"
+        android:textSize="30sp"
+        android:textStyle="bold"/> -->
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginRight="15dp"
+        android:inputType="textPassword"
+        android:hint="@string/Pass"
+        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="@string/LogIn"
+        android:onClick="buttonLogin"
+        android:layout_margin="10dp"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/NotAMemberYet"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+
+        />
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:text="@string/sign"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"  />
+
+</LinearLayout>

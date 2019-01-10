@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">GoGas</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="name">Name: </string>
+    <string name="name2">Name</string>
+    <string name="building">Building No.: </string>
+    <string name="street">Street No.: </string>
+    <string name="quantity">Quantity: </string>
+    <string name="type">Type: </string>
+    <string name="area">Area: </string>
+    <string name="nan">NAN</string>
+    <string name="distID">Staff no.</string>
+
+    <string name="mail">Email</string>
+    <string name="Pass">Password</string>
+    <string name="LogIn">Login</string>
+    <string name="NotAMemberYet">Not a member yet !</string>
+    <string name="sign">Sign Up</string>
+    <string name="confirm">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="withus">Already with us ?</string>
+    <string name="umail">Your email</string>
+    <string name="customer">Customer</string>
+    <string name="phonnum">Phone number</string>
+    <string name="distr">Distributor</string>
+</resources>

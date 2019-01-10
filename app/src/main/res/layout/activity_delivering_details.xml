@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".DeliveringDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Area"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"/>
+
+        <EditText
+            android:id="@+id/et_street"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Street no."
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            />
+
+        <EditText
+            android:id="@+id/et_building"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Building no."
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:ems="10"
+            android:inputType="textPersonName"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:orientation="vertical">
+<!--
+        <Button
+
+            android:id="@+id/bt_choose_on_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:background="@color/colorAccent"
+            android:onClick="buttonChooseOnMap"
+            android:text="Choose on map"
+            android:textAllCaps="false"
+            android:textColor="#EEEEEE"
+            android:textSize="20sp" />
+-->
+        <Button
+
+            android:id="@+id/bt_confirm_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:background="@color/colorAccent"
+            android:onClick="buttonConfirmLocation"
+            android:text="Confirm delivering location"
+            android:textAllCaps="false"
+            android:textColor="#EEEEEE"
+            android:textSize="20sp" />
+    </LinearLayout>
+</LinearLayout>

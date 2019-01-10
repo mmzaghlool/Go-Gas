@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".BookingActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_margin="5dp"-->
+        <!--&gt;-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_location_key"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Delivering location: "-->
+            <!--android:textSize="20sp" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_location_val"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Point on map"-->
+            <!--android:textColor="@color/colorAccent"-->
+            <!--android:textSize="20sp" />-->
+
+
+    <!--</LinearLayout>-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_payment_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Method"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp" />
+
+
+            <Spinner
+                android:id="@+id/spinner_payment"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown"/>
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_payment_val"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Cash"-->
+                <!--android:textColor="@color/colorAccent"-->
+                <!--android:clickable="true"-->
+                <!--android:onClick="buttonChoosePayment"-->
+                <!--android:textSize="20sp" />-->
+
+
+            <!--<ImageView-->
+                <!--android:clickable="true"-->
+                <!--android:onClick="buttonChoosePayment"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:layout_width="20dp"-->
+                <!--android:layout_gravity="center|right"-->
+                <!--android:layout_marginStart="5dp"-->
+                <!--app:srcCompat="@android:drawable/ic_menu_edit" />-->
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_qty_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp" />
+
+
+        <Spinner
+            android:id="@+id/spinner_qty"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
+        <!--<TextView-->
+            <!--android:id="@+id/tv_qty_val"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/nan"-->
+            <!--android:textColor="@color/colorAccent"-->
+            <!--android:clickable="true"-->
+            <!--android:onClick="buttonChooseQty"-->
+            <!--android:textSize="20sp" />-->
+
+
+        <!--<ImageView-->
+            <!--android:clickable="true"-->
+            <!--android:onClick="buttonChooseQty"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_gravity="center|right"-->
+            <!--android:layout_marginStart="5dp"-->
+            <!--app:srcCompat="@android:drawable/ic_menu_edit" />-->
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_type_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinner_type"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_type_val"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/nan"-->
+            <!--android:textColor="@color/colorAccent"-->
+            <!--android:clickable="true"-->
+            <!--android:onClick="buttonChooseType"-->
+            <!--android:textSize="20sp" />-->
+
+
+        <!--<ImageView-->
+            <!--android:clickable="true"-->
+            <!--android:onClick="buttonChooseType"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_gravity="center|right"-->
+            <!--android:layout_marginStart="5dp"-->
+            <!--app:srcCompat="@android:drawable/ic_menu_edit" />-->
+
+    </LinearLayout>
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_margin="5dp"-->
+        <!--&gt;-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_time_key"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Time: "-->
+            <!--android:textSize="20sp" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_time_val"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Tap to select"-->
+            <!--android:textColor="@color/colorAccent"-->
+            <!--android:clickable="true"-->
+            <!--android:onClick="buttonChooseTime"-->
+            <!--android:textSize="20sp" />-->
+
+
+        <!--<ImageView-->
+            <!--android:clickable="true"-->
+            <!--android:onClick="buttonChooseTime"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_gravity="center|right"-->
+            <!--android:layout_marginStart="5dp"-->
+            <!--app:srcCompat="@android:drawable/ic_menu_edit" />-->
+
+    <!--</LinearLayout>-->
+    </LinearLayout>
+
+    <Button
+
+        android:id="@+id/bt_as_soon_as_possible"
+        android:layout_width="match_parent"
+        android:textAllCaps="false"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:onClick="buttonChooseTime"
+        android:text="Choose delivering time"
+        android:textColor="#EEEEEE"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        />
+
+</LinearLayout>

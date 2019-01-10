@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity"
+    android:paddingHorizontal="20dp"
+    >
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:src="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/register"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="none|textEmailAddress"
+        android:hint="@string/mail"
+        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        />
+    <EditText
+        android:id="@+id/et_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="@string/Pass"
+        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        />
+    <EditText
+        android:id="@+id/et_confirm_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="@string/confirm"
+        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        />
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/name2"
+        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        />
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:hint="@string/phonnum"
+        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginVertical="5dp"
+        >
+
+        <Switch
+            android:id="@+id/switch_dist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:text="Customer"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/distr"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_dist_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/distID"
+        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="@string/register"
+        android:onClick="buttonRegister"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+
+
+
+
+
+</LinearLayout>

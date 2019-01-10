@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DistActivity"
+    >
+    <item
+        android:id="@+id/action_logout"
+        android:contentDescription="Logout"
+        android:icon="@drawable/logout"
+
+        android:orderInCategory="2"
+        android:title="Logout"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/action_support"
+        android:contentDescription="Customer support"
+        android:title="Customer support"
+        app:showAsAction="never" />
+
+</menu>
