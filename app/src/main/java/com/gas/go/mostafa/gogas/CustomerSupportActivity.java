@@ -64,22 +64,23 @@ public class CustomerSupportActivity extends AppCompatActivity {
                 list = new ArrayList<String>();
 
                 int counter = 0;
-                assert dataSnapshotValue != null;
-                for (Object i : dataSnapshotValue.keySet()) {
-                    i = i + "";
+                if (dataSnapshotValue != null) {
+                    for (Object i : dataSnapshotValue.keySet()) {
+                        i = i + "";
 
-                    Map data = (Map) dataSnapshotValue.get(i);
-                    String firstMessage = (String) data.keySet().toArray()[0];
-                    Map msg = (Map) data.get(firstMessage);
-                    Map sender = (Map) msg.get("sender");
-                    String nickname = (String) sender.get("nickname");
-                    String uid = (String) sender.get("uid");
+                        Map data = (Map) dataSnapshotValue.get(i);
+                        String firstMessage = (String) data.keySet().toArray()[0];
+                        Map msg = (Map) data.get(firstMessage);
+                        Map sender = (Map) msg.get("sender");
+                        String nickname = (String) sender.get("nickname");
+                        String uid = (String) sender.get("uid");
 
-                    data.put("uid", uid);
+                        data.put("uid", uid);
 
-                    list.add(nickname);
-                    messagesData.put(counter + "", data);
-                    counter++;
+                        list.add(nickname);
+                        messagesData.put(counter + "", data);
+                        counter++;
+                    }
                 }
                 renderList();
             }

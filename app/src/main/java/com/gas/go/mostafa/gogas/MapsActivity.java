@@ -166,28 +166,29 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMyLoca
                 Map dataSnapshotValue = (Map) dataSnapshot.getValue();
                 markersData = new HashMap();
 
-                assert dataSnapshotValue != null;
-                for (Object i : dataSnapshotValue.keySet()) {
-                    i = i.toString();
+                if(dataSnapshotValue != null) {
+                    for (Object i : dataSnapshotValue.keySet()) {
+                        i = i.toString();
 
-                    Log.d("current time", currentTime + "");
+                        Log.d("current time", currentTime + "");
 
-                    if (currentTime <= Long.parseLong((String) i)){
-                        continue;
+                        if (currentTime <= Long.parseLong((String) i)) {
+                            continue;
+                        }
+
+                        Log.d("i", i + "");
+                        Map data = (Map) dataSnapshotValue.get(i);
+
+                        double lat = (double) data.get("lat");
+                        double lng = (double) data.get("lng");
+                        String name = (String) data.get("name");
+
+                        // add marker
+                        LatLng latLng = new LatLng(lat, lng);
+                        String id = mMap.addMarker(new MarkerOptions().position(latLng).title(name)).getId();
+
+                        markersData.put(id, data);
                     }
-
-                    Log.d("i", i + "");
-                    Map data = (Map) dataSnapshotValue.get(i);
-
-                    double lat = (double) data.get("lat");
-                    double lng = (double) data.get("lng");
-                    String name = (String) data.get("name");
-
-                    // add marker
-                    LatLng latLng = new LatLng(lat, lng);
-                    String id = mMap.addMarker(new MarkerOptions().position(latLng).title(name)).getId();
-
-                    markersData.put(id, data);
                 }
 
             }

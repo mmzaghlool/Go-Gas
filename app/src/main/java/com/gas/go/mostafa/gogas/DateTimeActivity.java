@@ -59,7 +59,6 @@ public class DateTimeActivity extends AppCompatActivity {
 
         // calculate the previosly ordred qty in this day
         prevOrdred = new HashMap();
-        this.getDayOrders();
 
         setTime();
         setDate();

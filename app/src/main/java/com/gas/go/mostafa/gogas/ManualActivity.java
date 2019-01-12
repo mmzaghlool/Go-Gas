@@ -57,26 +57,27 @@ public class ManualActivity extends AppCompatActivity {
                 list = new ArrayList<String>();
 
                 int counter = 0;
-                assert dataSnapshotValue != null;
-                for (Object i : dataSnapshotValue.keySet()) {
-                    i = i + "";
+                if (dataSnapshotValue != null) {
+                    for (Object i : dataSnapshotValue.keySet()) {
+                        i = i + "";
 
-                    Log.d("current time", currentTime + "");
+                        Log.d("current time", currentTime + "");
 
-                    if (currentTime <= Long.parseLong((String) i)){
-                        continue;
+                        if (currentTime <= Long.parseLong((String) i)) {
+                            continue;
+                        }
+
+                        Log.d("i", (String) i);
+                        Map data = (Map) dataSnapshotValue.get(i);
+
+                        String area = (String) data.get("area");
+                        String building = (String) data.get("building");
+                        String street = (String) data.get("street");
+
+                        list.add(area + ", " + street + ", " + building);
+                        locationsData.put(counter + "", data);
+                        counter++;
                     }
-
-                    Log.d("i", (String) i);
-                    Map data = (Map) dataSnapshotValue.get(i);
-
-                    String area = (String) data.get("area");
-                    String building = (String) data.get("building");
-                    String street = (String) data.get("street");
-
-                    list.add(area + ", " + street + ", " + building);
-                    locationsData.put(counter + "", data);
-                    counter++;
                 }
                 renderList();
             }

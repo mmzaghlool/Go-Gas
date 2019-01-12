@@ -21,7 +21,7 @@ public class BookingActivity extends AppCompatActivity {
     private String timeStamp;
 
     //create a list of items for the types spinner.
-    private String[] typeItems = new String[]{"Small", "Medium", "Large"};
+    private String[] typeItems = new String[]{"Small: 1.500 OMR", "Medium: 2.800 OMR", "Large: 5.500 OMR"};
 
     //create a list of items for the qty spinner.
     private String[] qtyItems = new String[]{"1", "2", "3", "4", "5"};
