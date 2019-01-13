@@ -75,9 +75,27 @@ public class RegisterActivity extends AppCompatActivity {
         Log.v("email", email);
         Log.v("password", password);
         if (email.length() != 0 & password.length() != 0 & confirmPassword.length() != 0 &
-                name.length() != 0 & phone.length() != 8 ) {
+                name.length() != 0 & phone.length() == 8 ) {
 
-            if ((isDistChecked & distID.length() != 0) || !isDistChecked) {
+            boolean correctId = true;
+            // validate distributor id
+            if (distID.length() == 5){
+                for (int i = 0; i < distID.length(); i++){
+                    char temp = distID.charAt(i);
+                    if (i != 2) {
+                        correctId = Character.isDigit(temp);
+                    } else {
+                       correctId = Character.isAlphabetic(temp);
+                    }
+
+                    if (!correctId)
+                        break;
+                }
+            } else {
+                correctId = false;
+            }
+
+            if ((isDistChecked & correctId) || !isDistChecked) {
                 if (password.equals(confirmPassword)) {
 
                     mAuth.createUserWithEmailAndPassword(email, password)
@@ -148,7 +166,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             } else {
                 // If Distributor id is empty, display a message to the user.
-                Toast.makeText(RegisterActivity.this, "Distributor staff no. is required",
+                Toast.makeText(RegisterActivity.this, "Distributor staff no. is incorrect ex. 12D55" ,
                         Toast.LENGTH_LONG).show();
             }
         } else {
