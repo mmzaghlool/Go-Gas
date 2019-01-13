@@ -179,6 +179,32 @@
     </LinearLayout>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_time_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total payment: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_total_payment_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.5 OMR"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp" />
+
+
+
+    </LinearLayout>
+
     <!--<LinearLayout-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->

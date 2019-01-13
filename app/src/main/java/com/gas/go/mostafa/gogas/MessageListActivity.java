@@ -45,7 +45,6 @@ public class MessageListActivity extends AppCompatActivity {
         mMessageRecycler = (RecyclerView) findViewById(R.id.reyclerview_message_list);
         mMessageAdapter = new MessageListAdapter(MessageListActivity.this, messageList);
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MessageListActivity.this);
-        linearLayoutManager.setReverseLayout(true);
         mMessageRecycler.setLayoutManager(linearLayoutManager);
         mMessageRecycler.setAdapter(mMessageAdapter);
 
@@ -76,10 +75,6 @@ public class MessageListActivity extends AppCompatActivity {
                 Message message = dataSnapshot.getValue(Message.class);
 
                 Log.d("message", message.getMessage());
-//
-//                mMessageAdapter = new MessageListAdapter(MessageListActivity.this, messageList);
-//                mMessageRecycler.setLayoutManager(new LinearLayoutManager(MessageListActivity.this));
-//                mMessageRecycler.setAdapter(mMessageAdapter);
 
                 messageList.add(message);
                 mMessageRecycler.setAdapter(mMessageAdapter);
@@ -125,6 +120,7 @@ public class MessageListActivity extends AppCompatActivity {
 
         etMessage.setText("");
 
+        mMessageRecycler.smoothScrollToPosition(mMessageAdapter.getItemCount() -1 );
         messagesListener.setValue(messageInit);
 
     }

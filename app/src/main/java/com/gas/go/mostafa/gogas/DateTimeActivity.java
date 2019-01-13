@@ -165,7 +165,7 @@ public class DateTimeActivity extends AppCompatActivity {
             Intent intent = new Intent(DateTimeActivity.this, DistActivity.class);
 //        intent.putExtra("dist", false);
             DateTimeActivity.this.finish();
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP );
 
             startActivity(intent);
         }

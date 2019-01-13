@@ -3,8 +3,8 @@ package com.gas.go.mostafa.gogas;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -12,13 +12,14 @@ import android.widget.TextView;
 public class BookingActivity extends AppCompatActivity {
     private final short PICK_DATE_AND_TIME = 0;
     private DialogCash dialogCash;
-    private TextView tvPaymentMethod;
+    private TextView tvTotalPayment;
     private TextView tvTime;
     private Spinner typeSpinner;
     private Spinner qtySpinner;
     private Spinner paymentSpinner;
 
-    private String timeStamp;
+    private int selectedQty = 1;
+    private double selectedType = 1.5;
 
     //create a list of items for the types spinner.
     private String[] typeItems = new String[]{"Small: 1.500 OMR", "Medium: 2.800 OMR", "Large: 5.500 OMR"};
@@ -38,7 +39,7 @@ public class BookingActivity extends AppCompatActivity {
 
 //        tvPaymentMethod = (TextView) findViewById(R.id.tv_payment_val);
         tvTime = (TextView) findViewById(R.id.tv_time_val);
-
+        tvTotalPayment = (TextView) findViewById(R.id.tv_total_payment_val);
 
         //get the spinner from the xml.
         typeSpinner = findViewById(R.id.spinner_type);
@@ -55,8 +56,42 @@ public class BookingActivity extends AppCompatActivity {
         ArrayAdapter<String> paymentAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, paymentItems);
         paymentSpinner.setAdapter(paymentAdapter);
 
-    }
+        typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
+                double[] types = {1.5, 2.8, 5.5};
+                selectedType = types[position];
+                String val = selectedType * selectedQty + " OMR";
+                tvTotalPayment.setText(val);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
+        });
+
+        qtySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+
+                selectedQty = position + 1;
+                String val = selectedType * selectedQty + " OMR";
+                tvTotalPayment.setText(val);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
+        });
+
+    }
+/*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -69,7 +104,7 @@ public class BookingActivity extends AppCompatActivity {
             }
         }
 
-    }
+    }*/
 
 
     public void buttonConfirmBooking(View view) {
@@ -99,12 +134,7 @@ public class BookingActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void buttonChooseType(View view) {
-    }
-
-    public void buttonChooseQty(View view) {
-    }
-
+/*
     public void buttonCreditCard(View view) {
         tvPaymentMethod.setText("Credit card");
         dialogCash.dismiss();
@@ -113,5 +143,5 @@ public class BookingActivity extends AppCompatActivity {
     public void buttonCash(View view) {
         tvPaymentMethod.setText("Cash");
         dialogCash.dismiss();
-    }
+    }*/
 }

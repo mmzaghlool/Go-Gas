@@ -69,7 +69,8 @@ public class CustomerSupportActivity extends AppCompatActivity {
                         i = i + "";
 
                         Map data = (Map) dataSnapshotValue.get(i);
-                        String firstMessage = (String) data.keySet().toArray()[0];
+                        int firstMessageIndex = (int) data.keySet().toArray().length;
+                        String firstMessage = (String) data.keySet().toArray()[1 ];
                         Map msg = (Map) data.get(firstMessage);
                         Map sender = (Map) msg.get("sender");
                         String nickname = (String) sender.get("nickname");

@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 LoginActivity.this.finish();
-                intent.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
+                intent.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
 
@@ -122,25 +122,27 @@ public class LoginActivity extends AppCompatActivity {
         Log.d("login email", email);
         String password = etPass.getText().toString();
 
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            String uid = user.getUid();
-                            String type = user.getDisplayName();
-                            getUserData(uid, type);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(LoginActivity.this, "Check your email and password",
-                                    Toast.LENGTH_SHORT).show();
+        if (email.length() != 0 & password.length() != 0) {
+
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                String uid = user.getUid();
+                                String type = user.getDisplayName();
+                                getUserData(uid, type);
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Toast.makeText(LoginActivity.this, "Check your email and password",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+
+                            // ...
                         }
-
-                        // ...
-                    }
-                });
-
+                    });
+        }
     }
 }

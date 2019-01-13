@@ -93,6 +93,7 @@ public class MapDetailsActivity extends AppCompatActivity {
                 Toast.makeText(MapDetailsActivity.this, "Delivery confirmed", Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(MapDetailsActivity.this, DistActivity.class);
+                intent.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
             }
