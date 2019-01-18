@@ -138,7 +138,6 @@ public class DateTimeActivity extends AppCompatActivity {
             if (prevOrdred.containsKey(customerDate))
                 oldOrdredQty = Long.parseLong(prevOrdred.get(customerDate) + "");
 
-                Log.d("prevOrdred.)", prevOrdred.get(customerDate) + "");
         oldOrdredQty += Long.parseLong(qty);
 
         if (oldOrdredQty <= 5) {

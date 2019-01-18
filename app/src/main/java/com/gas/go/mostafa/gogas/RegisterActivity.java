@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
@@ -85,6 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if (i != 2) {
                         correctId = Character.isDigit(temp);
                     } else {
+//                       correctId = Character.isAlphabetic(temp);
                        correctId = Character.isAlphabetic(temp);
                     }
 
@@ -102,7 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
                             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
-//                                    Log.v("task", task.getResult() + "");
+//                                    Log.d("task", task.getResult().toString() + "");
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
                                         FirebaseUser user = mAuth.getCurrentUser();
@@ -148,12 +150,13 @@ public class RegisterActivity extends AppCompatActivity {
                                                         }
                                                     }
                                                 });
-//                            updateUI(user);
                                     } else {
                                         // If sign in fails, display a message to the user.
-                                        Toast.makeText(RegisterActivity.this, "Wrong or used Email",
-                                                Toast.LENGTH_LONG).show();
-//                            updateUI(null);
+                                        FirebaseAuthException e = (FirebaseAuthException)task.getException();
+                                        Toast.makeText(RegisterActivity.this, "Failed Registration: "+e.getMessage(), Toast.LENGTH_LONG).show();
+
+//                                        Toast.makeText(RegisterActivity.this, "Wrong or used Email",
+//                                                Toast.LENGTH_LONG).show();
                                     }
 
                                     // ...
