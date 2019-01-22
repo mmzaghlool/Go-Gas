@@ -108,7 +108,7 @@ public class MessageListActivity extends AppCompatActivity {
 
 
     public void buttonSend(View view) {
-        DatabaseReference messagesListener = mDatabase.child("Messages").child(customerUID).push();
+        DatabaseReference messagesListener = mDatabase.child("Messages").child(customerUID);
         final Calendar currentDate = Calendar.getInstance();
 
         String message = etMessage.getText().toString();
@@ -118,10 +118,12 @@ public class MessageListActivity extends AppCompatActivity {
         User sender = new User(senderName, userUID);
         Message messageInit = new Message(message, sender, timeStamp);
 
+//        Map update = new HashMap<String, Object>();
+//        update.put(timeStamp + "", messageInit);
+
         etMessage.setText("");
 
-        mMessageRecycler.smoothScrollToPosition(mMessageAdapter.getItemCount() -1 );
-        messagesListener.setValue(messageInit);
+        messagesListener.child(timeStamp + "").setValue(messageInit);
 
     }
 }

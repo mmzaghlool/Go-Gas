@@ -64,13 +64,33 @@ public class CustomerSupportActivity extends AppCompatActivity {
                 list = new ArrayList<String>();
 
                 int counter = 0;
+                /*for (DataSnapshot singleUser: dataSnapshot.getChildren()) {
+                    int firstMessageIndex = (int) singleUser.keySet().toArray().length;
+                    Query query =  singleUser.getRef().limitToFirst(1);
+                    String firstMessage = (String) singleUser.keySet().toArray()[0];
+//                        String sss = (String) data.values().toArray()[0];
+                    Log.d("daaaaaaaataaa ", firstMessage);
+                    Map msg = (Map) data.get(firstMessage);
+                    Map sender = (Map) msg.get("sender");
+                    String nickname = (String) sender.get("nickname");
+                    String uid = (String) sender.get("uid");
+
+                    data.put("uid", uid);
+
+                    list.add(nickname);
+                    messagesData.put(counter + "", data);
+                    counter++;
+                }
+*/
                 if (dataSnapshotValue != null) {
                     for (Object i : dataSnapshotValue.keySet()) {
                         i = i + "";
 
                         Map data = (Map) dataSnapshotValue.get(i);
                         int firstMessageIndex = (int) data.keySet().toArray().length;
-                        String firstMessage = (String) data.keySet().toArray()[1 ];
+                        String firstMessage = (String) data.keySet().toArray()[0];
+//                        String sss = (String) data.values().toArray()[0];
+                        Log.d("daaaaaaaataaa ", firstMessage);
                         Map msg = (Map) data.get(firstMessage);
                         Map sender = (Map) msg.get("sender");
                         String nickname = (String) sender.get("nickname");
